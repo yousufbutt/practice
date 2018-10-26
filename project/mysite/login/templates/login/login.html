@@ -1,0 +1,12 @@
+<!-- templates/registration/login.html -->
+<h2>Login to Enablement</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <p>Username &ensp;</p>
+  <input type="text" name="Username" id=user>
+  <p>Password &ensp;</p>
+  <input type="password" name="Password" id = "pass">
+  <p></p>
+  <button type="submit">Login</button>
+</form>
