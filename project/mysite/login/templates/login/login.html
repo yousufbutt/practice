@@ -1,4 +1,8 @@
 <!-- templates/registration/login.html -->
+{% extends "login/base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
 <h2>Login to Enablement</h2>
 <form method="post">
   {% csrf_token %}
@@ -10,3 +14,5 @@
   <p></p>
   <button type="submit">Login</button>
 </form>
+
+{% endblock %}
