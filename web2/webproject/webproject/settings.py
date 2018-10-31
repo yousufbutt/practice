@@ -25,18 +25,19 @@ SECRET_KEY = 's9*e$xz#ip+m!hs70c7hw2l*n!ualff^=tq3h9d!*_t1fg@@p$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.114']
 
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webapp',
 ]
 
 MIDDLEWARE = [
@@ -74,13 +75,13 @@ WSGI_APPLICATION = 'webproject.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
-        'USER': 'yousuf',
-        'PASSWORD': '123',
+       'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
 
 DATABASE_OPTIONS = { "init_command": 'SET NAMES "utf8"' ,  "init_command":'SET storage_engine=INNODB' , }
 
@@ -102,6 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+MEDIA_URL = '/docs/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'docs')
 
 
 # Internationalization
